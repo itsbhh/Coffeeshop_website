@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+     <!-- Firebase App (the core Firebase SDK) -->
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-database-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-auth-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-storage-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\DELL\Desktop\flavoured coffee shop\coffee.css">
+    <link rel="icon" type="image/png" href="coffee1.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Flavored <i class="fas fa-coffee" id="sidebarToggle"></i></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking">Book a Table</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+      
+      <!-- Sidebar -->
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="sidebar-link" href="#about">About</a>
+        <a class="sidebar-link" href="#menu">Menu</a>
+        <a class="sidebar-link" href="#blog">Blog</a>
+        <a class="sidebar-link" href="#contact">Contact</a>
+        <a class="sidebar-link" href="#booking">Book a Table</a>
+      </div>
+
+   
+    <section id="home" class="section home" style="background-image: url('coffee1.jpg');">
+        <div class="welcome-container">
+        <h2 class="welcome">Welcome to <h1 class="flavored-text" style="font-size: 80px; font-weight: 500; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Flavored <i class="fas fa-coffee"></i></h1></h2>
+            <h2>Coffee <br>The Best For You</h2>
+            <div class="icons mt-8">
+                <i class="fas fa-coffee"></i>
+                <i class="fas fa-mug-hot"></i>
+                <i class="fas fa-seedling"></i>
+                <i class="fas fa-heart"></i>
+                </div>
+        
+        <p style="font-size: 30px; font-family: 'Brush Script MT', cursive;">Your perfect place for coffee and relaxation.</p>
+    </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="img.jpg" alt="Image1" class="img-fluid mb-3 image-1">
+                            </div>
+                            <div class="col-md-12">
+                                <img src="img2.jpg" alt="Image2" class="img-fluid mb-3 image-2">
+                            </div>
+                            <div class="col-md-12">
+                                <img src="img3.jpg" alt="Image3" class="img-fluid image-3">
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-6">
+                    <h2 class="about" style="font-size: 60px;">About Us</h2>
+                    <h3 style="font-size: 25px ; font-family:'cursive'; color: lightpink;">Opening Hours: <br>9:00PM - 9:00PM</h3><br>
+                    <br>
+                    <p style="font-size: 20px; font-weight: 900px;"><span style="font-size: 35px ; font-family:'cursive';">Welcome to Our Flavoured Cafe <i class="fas fa-coffee"></i></span>Where every cup tells a story and every sip is an experience to cherish. We are a passionate team of coffee enthusiasts dedicated to crafting the perfect brew and creating memorable moments for our customers.</p>
+                    <p style="font-size: 20px; font-weight: 900px;">At Our Flavoured Cafe <i class="fas fa-coffee"></i>, we believe that great coffee is more than just a beverage – it's a way of life. From the moment you step into our cozy cafe, you'll be greeted with the aroma of freshly roasted beans and the warm smiles of our friendly staff.</p>
+                    <p style="font-size: 20px; font-weight: 900px;">Our commitment to quality extends beyond the coffee we serve. We carefully source our beans from sustainable and ethical growers, ensuring that each cup not only delights your taste buds but also supports responsible farming practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="menu" class="section menu">
+        <h2 class="menu"style="font-size: 60px;">Our Menu</h2>
+        <div class="row">
+           
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="espresso.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Espresso</h5>
+                        <p class="card-text">A classic espresso made from the finest beans.</p>
+                        <p class="card-price">$2.50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="latte.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Latte</h5>
+                        <p class="card-text">Smooth espresso with steamed milk.</p>
+                        <p class="card-price">$3.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="cappucino.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Cappuccino</h5>
+                        <p class="card-text">Strong espresso with frothed milk.</p>
+                        <p class="card-price">$3.50</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="mocha.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha</h5>
+                        <p class="card-text">Rich espresso with chocolate and steamed milk.</p>
+                        <p class="card-price">$4.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="machiato.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Macchiato</h5>
+                        <p class="card-text">Espresso with a dollop of frothy milk.</p>
+                        <p class="card-price">$3.25</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="americano.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Americano</h5>
+                        <p class="card-text">Strong espresso with hot water.</p>
+                        <p class="card-price">$2.75</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="iced.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Iced Coffee</h5>
+                        <p class="card-text">Chilled coffee served over ice.</p>
+                        <p class="card-price">$3.50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="affogato.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Affogato</h5>
+                        <p class="card-text">Espresso poured over a scoop of vanilla ice cream.</p>
+                        <p class="card-price">$4.50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="flat.jpg" class="card-img-top" alt="Coffee Item">
+                    <div class="card-body">
+                        <h5 class="card-title">Flat White</h5>
+                        <p class="card-text">Espresso with velvety microfoam.</p>
+                        <p class="card-price">$3.75</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section id="blog" class="section blog" style="background-image: url('coffee2.jpg');">
+        <div class="container">
+            <h2 class="blog">Blog</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="blg1.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">The Art of Espresso: Mastering the Perfect Shot</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" style="color: #c9c7c7 !important;">Ava Bennett</h6>
+                            <p class="card-text">Join Ava Bennett as she delves into the intricate world of espresso brewing. From understanding the science behind extraction to mastering the techniques of tamping and steaming milk, this blog explores the nuances of pulling the perfect shot of espresso. Whether you're a budding barista or a seasoned coffee enthusiast, discover the secrets to crafting an espresso that tantalizes the senses and leaves you craving for more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="blg2.jpg" class="card-img-top" alt="Blog Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Exploring Coffee Origins: A Journey Through Bean Terroirs</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" style="color: #c9c7c7 !important;">Marcus Rodriguez</h6>
+                            <p class="card-text">Embark on a global adventure with Marcus Rodriguez as he takes you on a journey through the diverse terroirs of coffee-growing regions. From the lush mountains of Ethiopia to the volcanic soils of Guatemala, this blog explores how environmental factors influence the flavor profiles of coffee beans. Join Marcus as he uncovers the unique characteristics of beans from different origins and learns how to appreciate the rich diversity of the coffee world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="blg3.jpg" class="card-img-top" alt="Blog Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Coffee and Creativity: How Cafes Fuel Inspiration</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" style="color: #c9c7c7 !important;">Emily Chang</h6>
+                            <p class="card-text">Join Emily Chang as she explores the symbiotic relationship between coffee and creativity. From bustling urban cafes to quaint corner shops, this blog examines how the ambiance and culture of coffee shops provide the perfect backdrop for sparking inspiration. Discover how artists, writers, and entrepreneurs alike harness the power of caffeine and community to fuel their creative endeavors. Whether you're seeking a quiet space to brainstorm or a vibrant hub of innovation, this blog celebrates the role of coffee shops in nurturing creativity and fostering connections.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<section id="happy" class="section happy">
+<h2 class="happy-customers">Happy Customers</h2>
+<div class="row">
+   
+    <div class="col-md-4">
+        <div class="card">
+            <img src="hc1.jpg" alt="Happy Customer 1" class="img-fluid">
+            <div class="card-body">
+                <p>"Best coffee in town! Always a pleasure to visit."</p>
+                <p>- John Doe</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-md-4">
+        <div class="card">
+            <img src="hc2.jpg" alt="Happy Customer 2" class="img-fluid">
+            <div class="card-body">
+                <p>"I love the ambiance and the friendly staff."</p>
+                <p>- Jane Smith</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="hc3.jpg" alt="Happy Customer 3" class="img-fluid">
+            <div class="card-body">
+                <p>"A perfect place to relax and enjoy a cup of coffee."</p>
+                <p>- Mark Wilson</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="contact" class="section contact" style="background-image: url('coffee3.jpg');">
+    <h2 class="contact">Contact Us</h2>
+    <div class="container">
+        <div class="row" style="color: white;">
+            <div class="col-md-16">
+                            <div class="card">
+                                <i class="fas fa-phone-alt"></i>
+                                <h6>+91 xxxxx xxxxx</h6>
+                            </div>
+                            <div class="card">
+                                <i class="far fa-envelope"></i>
+                                
+                                <h6>anandbhawna40gmail.com</h6>
+                            </div>
+                            <div class="card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h6>xxx, xxx</h6>
+                            </div>
+        </div>
+    </div>
+</section>
+<section id="blog-testimonials" class="section blog-testimonials">
+    <div class="container text-center">
+        <h2>Add Blog/Testimonials</h2>
+        <form id="add-content-form" class="mb-4">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="content-type" id="blog-radio" value="blog">
+                <label class="form-check-label" for="blog-radio">Add Blog</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="content-type" id="testimonials-radio" value="testimonials">
+                <label class="form-check-label" for="testimonials-radio">Add Testimonials</label>
+            </div>
+        </form>
+        <div id="content-form">
+            <!-- Blog Form -->
+            <form id="blog-form" method="POST" enctype="multipart/form-data" style="display:none;">
+                <div class="mb-3">
+                    <label for="blog-title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="blog-title" name="blog-title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="blog-author" class="form-label">Author</label>
+                    <input type="text" class="form-control" id="blog-author" name="blog-author" required>
+                </div>
+                <div class="mb-3">
+                    <label for="blog-content" class="form-label">Content</label>
+                    <textarea class="form-control" id="blog-content" name="blog-content" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="blog-image" class="form-label">Upload Image</label>
+                    <input class="form-control" type="file" id="blog-image" name="blog-image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Blog</button>
+            </form>
+
+            <!-- Testimonials Form -->
+            <form id="testimonials-form" style="display:none;">
+                <div class="mb-3">
+                    <label for="testimonial-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="testimonial-name" name="testimonial-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="testimonial-content" class="form-label">Testimonial</label>
+                    <textarea class="form-control" id="testimonial-content" name="testimonial-content" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="testimonial-image" class="form-label">Upload Image</label>
+                    <input class="form-control" type="file" id="testimonial-image" name="testimonial-image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section id="booking" class="section booking" style="background-image: url('coffee4.jpg');">
+    <h2 class="booking">Book a<span style="color: blueviolet;">Table</span> </h2>
+    <form id="bookingForm" >
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-16">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+              
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="date">Date of Visit:</label>
+                    <input type="date" id="date" name="date" class="form-control" required
+                           min="2024-06-24" max="2050-12-31">
+                </div>
+                <div class="col-md-6">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" class="form-control" required
+                           min="09:00" max="21:00" step="900">
+                </div>
+                <div class="col-md-6">
+                    <label for="number_of_persons">Number of Persons:</label>
+                    <input type="number" id="number_of_persons" name="number_of_persons" class="form-control" required
+                           min="1" oninput="validity.valid||(value='');">
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 style=" font-family: 'Brush Script MT', cursive;">Subscribe to Our Newsletter</h3>
+                <form id="subscribeForm">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="button-addon2" required>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Follow Us</h3>
+                <p>&copy; 2024 Flavoured Cafe<i class="fas fa-coffee"></i>. All rights reserved.</p>
+                <ul class="list-unstyled" style="display: flex; align-items: center;">
+                    <li style="margin-right: 10px;"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li style="margin-right: 10px;"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div id="subscribeDialog" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style=" font-family: 'Brush Script MT', cursive;">Subscribed to Our Newsletter</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for subscribing! You are eligible for a 15% discount coupon.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bookingConfirmation" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"style=" font-family: 'Brush Script MT', cursive;">Booking Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for booking a table with us. Your booking details are shown below. If you want to cancel your booking or make some changes contact us on mail.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="thank-you-dialog" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"style=" font-family: 'Brush Script MT', cursive;">Thank You</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your precious time to write your precious words! we will review the data enter by you if nothing harms our policy we will add it in our website in 24 hours of content input.</p>
+                <p>If you want to delete your response you submitted please mail us.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btZn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="C:\Users\DELL\Desktop\flavoured coffee shop\scroll.js"></script>
+<script src="C:\Users\DELL\Desktop\flavoured coffee shop\coffee.js"></script>
+
+</body>
+</html>
